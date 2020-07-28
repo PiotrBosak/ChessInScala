@@ -1,6 +1,6 @@
 package board
 
 class Board {
-  val tiles = BoardFactory()
+  val tiles: List[Tile] = BoardFactory()
 
 }

@@ -8,19 +8,19 @@ import scala.annotation.tailrec
 case object BoardFactory {
   def apply(): List[Tile] = {
     createTileWithWhiteQueen() ::
-    createTileWithBlackQueen() ::
-    createTileWithWhiteKing() ::
-    createTileWithBlackKing() ::
-    createTilesWithWhitePawns() ++
-    createTilesWithBlackPawns() ++
-    createTilesWithWhiteRooks() ++
-    createTilesWithBlackRooks() ++
-    createTilesWithWhiteKnights() ++
-    createTilesWithBlackKnights() ++
-    createTilesWithWhiteBishops() ++
-    createTilesWithBlackBishops() ++
-    createTilesWithNoPieces()
-}
+      createTileWithBlackQueen() ::
+      createTileWithWhiteKing() ::
+      createTileWithBlackKing() ::
+      createTilesWithWhitePawns() ++
+        createTilesWithBlackPawns() ++
+        createTilesWithWhiteRooks() ++
+        createTilesWithBlackRooks() ++
+        createTilesWithWhiteKnights() ++
+        createTilesWithBlackKnights() ++
+        createTilesWithWhiteBishops() ++
+        createTilesWithBlackBishops() ++
+        createTilesWithNoPieces()
+  }
 
   private def createTilesWithBlackBishops(): List[Tile] = List(
     new Tile(White, 3, 8, Some(Bishop(Black))),
@@ -55,7 +55,6 @@ case object BoardFactory {
 
   private def createTileWithBlackKing(): Tile =
     new Tile(White, 5, 8, Some(King(Black)))
-
 
   private def createTileWithBlackQueen(): Tile =
     new Tile(Black, 4, 8, Some(Queen(Black)))

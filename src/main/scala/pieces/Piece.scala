@@ -2,17 +2,17 @@ package pieces
 
 import color.Color
 
-sealed abstract class Piece(color: Color)
+sealed abstract class Piece(val color: Color)
 
-case class Pawn(color: Color) extends Piece(color)
+case class Pawn(override val color: Color) extends Piece(color)
 
-case class Bishop(color: Color) extends Piece(color)
+case class Bishop(override val color: Color) extends Piece(color)
 
-case class Knight(color: Color) extends Piece(color)
+case class Knight(override val color: Color) extends Piece(color)
 
-case class Rook(color: Color) extends Piece(color)
+case class Rook(override val color: Color) extends Piece(color)
 
-case class Queen(color: Color) extends Piece(color)
+case class Queen(override val color: Color) extends Piece(color)
 
-case class King(color: Color) extends Piece(color)
+case class King(override val color: Color) extends Piece(color)
 

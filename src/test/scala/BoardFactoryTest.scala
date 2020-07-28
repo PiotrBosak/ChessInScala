@@ -19,13 +19,23 @@ class BoardFactoryTest extends FunSuite
 
 
   test("Board should have 16 pawns, 8 for each color") {
-    assert(board.tiles.map(_.startingPiece).count(p => p.isDefined && p.get.isInstanceOf[Pawn]) == 16)
-    assert(board.tiles.map(_.startingPiece).count(p => p.isDefined && p.get.isInstanceOf[Pawn] && p.get.color == Black) == 8)
-    assert(board.tiles.map(_.startingPiece).count(p => p.isDefined && p.get.isInstanceOf[Pawn] && p.get.color == White) == 8)
+    assert(board.tiles
+      .map(_.startingPiece)
+      .count(p => p.isDefined && p.get.isInstanceOf[Pawn]) == 16)
+    assert(board.tiles
+      .map(_.startingPiece)
+      .count(p => p.isDefined && p.get.isInstanceOf[Pawn] && p.get.color == Black) == 8)
+    assert(board.tiles
+      .map(_.startingPiece)
+      .count(p => p.isDefined && p.get.isInstanceOf[Pawn] && p.get.color == White) == 8)
   }
   test("Board should have 2 black Knights and 2 white Knights") {
-    assert(board.tiles.map(_.startingPiece).count(p => p.isDefined && p.get.isInstanceOf[Knight] && p.get.color == White) == 2)
-    assert(board.tiles.map(_.startingPiece).count(p => p.isDefined && p.get.isInstanceOf[Knight] && p.get.color == Black) == 2)
+    assert(board.tiles
+      .map(_.startingPiece)
+      .count(p => p.isDefined && p.get.isInstanceOf[Knight] && p.get.color == White) == 2)
+    assert(board.tiles
+      .map(_.startingPiece)
+      .count(p => p.isDefined && p.get.isInstanceOf[Knight] && p.get.color == Black) == 2)
   }
 
   test("At A1 there is a white rook, and at F8 there is black Bishop") {

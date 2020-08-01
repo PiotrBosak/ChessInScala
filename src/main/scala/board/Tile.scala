@@ -13,6 +13,9 @@ case class Tile private(color: Color, column: Int, row: Int, startingPiece: Opti
 
   def hasMoved: Boolean = currentPiece eq startingPiece
 
+  def isPieceColorDifferent(another: Option[Tile]): Boolean =
+    another.isDefined && another.get.currentPiece.isDefined && another.get.currentPiece.get.color != this.color
+
 }
 
 object Tile {
